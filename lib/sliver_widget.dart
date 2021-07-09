@@ -19,8 +19,8 @@ class SliverWidget extends StatefulWidget {
   final Duration animationDuration;
 
   const SliverWidget(
-      {Key key,
-      @required this.child,
+      {Key? key,
+      required this.child,
       this.isFadeByPositionRatio = true,
       this.visibility = SliverWidgetVisibility.visibleWhenCollapsed,
       this.isAnimated = true,
@@ -33,7 +33,7 @@ class SliverWidget extends StatefulWidget {
 }
 
 class _SliverWidgetState extends State<SliverWidget> {
-  ScrollPosition _position;
+  ScrollPosition? _position;
   double _ratio = 1;
 
   @override
@@ -60,7 +60,7 @@ class _SliverWidgetState extends State<SliverWidget> {
   }
 
   void _positionListener() {
-    final FlexibleSpaceBarSettings settings =
+    final FlexibleSpaceBarSettings? settings =
         context.dependOnInheritedWidgetOfExactType();
 
     if (settings != null && settings.maxExtent > settings.minExtent) {
